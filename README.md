@@ -15,9 +15,9 @@ Telegram Bot - Ubuntu/Debian Server Control Panel
  - Скачать установщик
  (sudo python3 installer.py)
  - Следовать инструкциям установщика:
-   - Ввести свой токен Телеграм-бота
-   - Отправить любое сообщение вашему боту
-   - Сохранить пароль
+  - Ввести свой токен Телеграм-бота
+  - Отправить любое сообщение вашему боту
+  - Сохранить пароль
 
 ## ⚠️ Важное
  - Сервис запрашивает полные права на устройстве (root доступ). Это необходимо для работы. Вы можете ознакомиться с открытым кодом.
@@ -30,10 +30,10 @@ Telegram Bot - Ubuntu/Debian Server Control Panel
 ## 🚫 Удаление
  - Вы можете удалить сервис, запустив установщик, и нажав ctrl c
  - Ручное удаление включает в себя:
-   - Принудительное завершение всех процессов пользователя esbot
-   - Удаление пользователя esbot
-   - Остановка службы esbot
-   - Удаление службы esbot
+  - Принудительное завершение всех процессов пользователя esbot
+  - Удаление пользователя esbot
+  - Остановка службы esbot
+  - Удаление службы esbot
 
 ## ❓ Часто задаваемые вопросы 
  - Бот не отвечает на команды:
@@ -55,9 +55,9 @@ Telegram Bot - Ubuntu/Debian Server Control Panel
  - Download the installer
  (sudo python3 installer.py )
  - Follow the instructions of the installer:
- - Enter your Telegram Bot token
- - Send any message to your bot
- - Save the password
+  - Enter your Telegram Bot token
+  - Send any message to your bot
+  - Save the password
 
 ## ⚠️ Important
  - The service requests full rights on the device (root access). It is necessary for work. You can check out the open source.
@@ -70,10 +70,10 @@ Telegram Bot - Ubuntu/Debian Server Control Panel
 ## 🚫 Removal
  - You can remove the service by running the installer and pressing ctrl c
  - Manual removal includes:
- - Forced termination of all esbot user processes
- - Deleting an esbot user
- - Stopping the esbot service
- - Removing the esbot service
+  - Forced termination of all esbot user processes
+  - Deleting an esbot user
+  - Stopping the esbot service
+  - Removing the esbot service
 
 ## ❓ FAQ
  - The bot does not respond to commands:
