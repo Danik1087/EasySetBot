@@ -125,24 +125,26 @@ try:
                     if shutil.which('git') is None: # Скачивание git если его нет
                         print('Устанавливаю git...')
                         shl('sudo apt install git -y')
-                    downloadlink = '' # Ссылка скачивания репозитория.
+                    downloadlink = 'https://github.com/Danik1087/EasySetBot/releases/download/v0.7/' # Ссылка скачивания репозитория.
                     shl("sudo -u ESBot mkdir -p /home/ESBot/EasySetBot") # Создание директории телеграм-бота
                     print(f'Начинаю установку с \n{downloadlink}')
-
+                    files = [
+                        "firstload.py",
+                        "libraries.zip",
+                        "main.py",
+                        "README.md",
+                        "requirements.txt",
+                          "users.json"
+                    ]
                     try:
-                        shl(f'sudo -u ESBot git clone {downloadlink} /home/ESBot/EasySetBot')
+                        for file in files:
+                            shl(f'sudo -u ESBot wget -q -O /home/ESBot/EasySetBot/{file} {downloadlink+file}')
 
                     except Exception as e:
                         print('Установка остановлена с ошибкой.')
                         print(e)
-                        print('Попытка установить №2')
-                        print(f'Начинаю установку с \n{downloadlink}')
-
-                        try:
-                            shl(f'sudo -u ESBot wget -P /home/ESBot/EasySetBot {downloadlink}')
-                        except Exception as e:
-                            print(f'Ошибка. \n{e}')
-                            endwitherror()
+                        endwitherror()
+                            
 
 
 
@@ -192,3 +194,4 @@ except Exception as e:
     print(f"Критическая ошибка: {e}")
     print(f'Процесс завершен с ошибкой.')
     endwitherror()
+
