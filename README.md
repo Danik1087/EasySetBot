@@ -39,4 +39,45 @@ Telegram Bot - Ubuntu/Debian Server Control Panel
  - Бот не отвечает на команды:
   1. Подождите в течении 4 - 10 минут. Возможно вы поставили на установку что-либо, и сервис щас занят этим.
   2. Проверьте статус службы esbot (sudo systemctl status esbot) и перезапустите (sudo systemctl restart esbot)
+
+## English 
+## 🚀 Features 
+ - Server monitoring (CPU, RAM, traffic, Internet speed)
+ - SSH Configuration Manager
+ - Download/Upload files
+ - Remote Access console
+ - Apache/Nginx management
+ - Password authorization and Telegram ID
+
+## 📦 Installation
+ - Download Python 
+ (sudo apt install python3 -y)
+ - Download the installer
+ (sudo python3 installer.py )
+ - Follow the instructions of the installer:
+ - Enter your Telegram Bot token
+ - Send any message to your bot
+ - Save the password
+
+## ⚠️ Important
+ - The service requests full rights on the device (root access). It is necessary for work. You can check out the open source.
+ - The service requests a Telegram bot token. The token is required for the bot to work. The token is securely stored locally on the device and is not shared with third parties.
+ - The service provides remote access services. Use it only for legal purposes!
+
+## 📄 License
+ - The service's code is open and distributed under the MIT license. You are free to use it, provided that the authorship is indicated.
+
+## 🚫 Removal
+ - You can remove the service by running the installer and pressing ctrl c
+ - Manual removal includes:
+ - Forced termination of all esbot user processes
+ - Deleting an esbot user
+ - Stopping the esbot service
+ - Removing the esbot service
+
+## ❓ FAQ
+ - The bot does not respond to commands:
+  1. Wait for 4 to 10 minutes. You may have installed something, and the service is currently busy with it.
+  2. Check the status of the esbot service (sudo systemctl status esbot) and restart (sudo systemctl restart esbot)
+
  
