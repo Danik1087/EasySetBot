@@ -132,9 +132,8 @@ try:
                         "firstload.py",
                         "libraries.zip",
                         "main.py",
-                        "README.md",
                         "requirements.txt",
-                          "users.json"
+                        "users.json"
                     ]
                     try:
                         for file in files:
@@ -194,4 +193,5 @@ except Exception as e:
     print(f"Критическая ошибка: {e}")
     print(f'Процесс завершен с ошибкой.')
     endwitherror()
+
 
