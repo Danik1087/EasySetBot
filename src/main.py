@@ -115,7 +115,7 @@ if users_data['superadmin'][0]['password'] == 'None':
 
     users_data = load_users()
 
-TOKEN = os.getenv('TOKEN')
+
 application = Application.builder().token(TOKEN).build()
 password_error_count = 0
 
