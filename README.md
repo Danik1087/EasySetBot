@@ -1,8 +1,8 @@
 # EasySetBot
 Telegram Bot - Ubuntu/Debian Server Control Panel
 
-##⚡️Быстрый запуск
-'''curl -s https://github.com/Danik1087/EasySetBot/releases/download/v0.8/installer.py | python3'''
+## ⚡️Быстрый запуск
+```curl -s https://github.com/Danik1087/EasySetBot/releases/download/v0.8/installer.py | python3```
 
 ## 🚀 Функции
  - Мониторинг сервера (CPU, RAM, трафик, скорость интернета)
@@ -45,8 +45,8 @@ Telegram Bot - Ubuntu/Debian Server Control Panel
 
 ## English (machine-translated)
 
-##⚡️Quick start
-‘’'curl -s https://github.com/Danik1087/EasySetBot/releases/download/v0.8/installer.py | python3'‘’
+## ⚡️Quick start
+```curl -s https://github.com/Danik1087/EasySetBot/releases/download/v0.8/installer.py | python3```
 
 ## 🚀 Features
  - Server monitoring (CPU, RAM, traffic, internet speed)
