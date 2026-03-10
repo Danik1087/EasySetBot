@@ -1,6 +1,9 @@
 # EasySetBot
 Telegram Bot - Ubuntu/Debian Server Control Panel
 
+##⚡️Быстрый запуск
+'''curl -s https://github.com/Danik1087/EasySetBot/releases/download/v0.8/installer.py | python3'''
+
 ## 🚀 Функции
  - Мониторинг сервера (CPU, RAM, трафик, скорость интернета)
  - Менеджер ssh конфигурации
@@ -37,47 +40,49 @@ Telegram Bot - Ubuntu/Debian Server Control Panel
 
 ## ❓ Часто задаваемые вопросы 
  - Бот не отвечает на команды:
-  1. Подождите в течении 4 - 10 минут. Возможно вы поставили на установку что-либо, и сервис щас занят этим.
+  1. Подождите в течении 4 - 10 минут. Возможно вы поставили на установку что-либо, и сервис сейчас занят этим.
   2. Проверьте статус службы esbot (sudo systemctl status esbot) и перезапустите (sudo systemctl restart esbot)
 
 ## English (machine-translated)
-## 🚀 Features 
- - Server monitoring (CPU, RAM, traffic, Internet speed)
- - SSH Configuration Manager
- - Download/Upload files
- - Remote Access console
+
+##⚡️Quick start
+‘’'curl -s https://github.com/Danik1087/EasySetBot/releases/download/v0.8/installer.py | python3'‘’
+
+## 🚀 Features
+ - Server monitoring (CPU, RAM, traffic, internet speed)
+ - SSH configuration manager
+ - File download/upload
+ - Remote access console
  - Apache/Nginx management
- - Password authorization and Telegram ID
+ - Password and Telegram ID authorization
 
 ## 📦 Installation
  - Download Python 
  (sudo apt install python3 -y)
- - Download the installer
- (sudo python3 installer.py )
- - Follow the instructions of the installer:
-   - Enter your Telegram Bot token
+ - Download and run the installer
+ (sudo python3 installer.py)
+ - Follow the installer instructions:
+   - Enter your Telegram bot token
    - Send any message to your bot
-   - Save the password
+   - Save your password
 
 ## ⚠️ Important
- - The service requests full rights on the device (root access). It is necessary for work. You can check out the open source.
- - The service requests a Telegram bot token. The token is required for the bot to work. The token is securely stored locally on the device and is not shared with third parties.
- - The service provides remote access services. Use it only for legal purposes!
+ - The service requests full rights on the device (root access). This is necessary for it to work. You can view the open source code.
+ - The service requests a Telegram bot token. The token is necessary for the bot to work. The token is securely stored locally on the device and is not transferred to third parties.
+ - The service provides remote access services. Use only for legal purposes!
 
 ## 📄 License
- - The service's code is open and distributed under the MIT license. You are free to use it, provided that the authorship is indicated.
+ - The service code is open source and distributed under the MIT license. You are free to use it provided that you indicate the authorship.
 
 ## 🚫 Removal
- - You can remove the service by running the installer and pressing ctrl c
- - Manual removal includes:
-   - Forced termination of all esbot user processes
-   - Deleting an esbot user
-   - Stopping the esbot service
-   - Removing the esbot service
+- You can remove the service by running the installer and pressing ctrl c
+- Manual removal includes:
+  - Forcibly terminating all esbot user processes
+  - Deleting the esbot user
+  - Stopping the esbot service
+  - Removing the esbot service
 
-## ❓ FAQ
- - The bot does not respond to commands:
-  1. Wait for 4 to 10 minutes. You may have installed something, and the service is currently busy with it.
-  2. Check the status of the esbot service (sudo systemctl status esbot) and restart (sudo systemctl restart esbot)
-
- 
+## ❓ Frequently asked questions 
+- The bot does not respond to commands:
+  1. Wait for 4-10 minutes. You may have set something up, and the service is currently busy with it.
+  2. Check the status of the esbot service (sudo systemctl status esbot) and restart it (sudo systemctl restart esbot).
