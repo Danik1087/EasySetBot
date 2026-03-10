@@ -88,6 +88,8 @@ def sshkey(user='root'):
         shl(f'ssh-keygen -t ed25519 -f {homedir}/.ssh/id_ed25519 -N "" -q')
         shl(f'cat {homedir}/.ssh/id_ed25519.pub >> {homedir}/.ssh/authorized_keys')
         shl(f'chmod 600 {homedir}/.ssh/authorized_keys')
+        shl(f'chown -R {user}:{user} {homedir}/.ssh') # Назначение пользователя user владельцем директории
+        
         print(f'Ключ создан и добавлен к пользователю {user}')
     except Exception as e:
         print(f'Ошибка {e}')
@@ -169,4 +171,5 @@ def updatesystem():
     shl('apt autoremove -y')
     shl('apt autoclean -y')
     print('Обновление завершено!')
+
 
