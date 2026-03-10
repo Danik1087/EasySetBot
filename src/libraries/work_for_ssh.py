@@ -1,7 +1,7 @@
 # work_for_ssh.py
 
 import subprocess
-
+import os
 
 
 def shl(cmd):
@@ -123,7 +123,7 @@ def rootnologin(y=0):
 
 
 def passwdnologin(y=0):
-    '''Меняет ssh порт'''
+    '''Запрещает заходить с помощью пароля'''
     try:
         with open("/etc/ssh/sshd_config", 'r', encoding = 'utf-8') as file:
             lines = file.readlines()
@@ -137,12 +137,27 @@ def passwdnologin(y=0):
             for line in lines:
                 if line.strip().startswith('PasswordAuthentication') or line.strip().startswith('#PasswordAuthentication'):
                     file.write(f'PasswordAuthentication {y}\n')
-                    print(f'Возможность входа по паролю теперь {y}')
+                    
                     confirm = True
                 else:
                     file.write(line)
+            
             if confirm is False:
-                file.write(f'\nPort {y}\n')
+                file.write(f'\nPasswordAuthentication {y}\n')
+
+            if os.path.exists("/etc/ssh/sshd_config.d/50-cloud-init.conf"):
+                with open("/etc/ssh/sshd_config.d/50-cloud-init.conf", 'r', encoding = 'utf-8') as file2:
+                    lines2 = file2.readlines()
+                with open("/etc/ssh/sshd_config.d/50-cloud-init.conf", 'w', encoding = 'utf-8') as file2:
+                    for line in lines2:
+                        if line.strip().startswith('PasswordAuthentication') or line.strip().startswith('#PasswordAuthentication'):
+                            file2.write(f'PasswordAuthentication {y}\n')
+                            
+                            confirm = True
+                        else:
+                            file2.write(line)
+                            
+            print(f'Возможность входа по паролю теперь {y}')
         return 1
     except Exception as e:
         print(e)
@@ -171,5 +186,6 @@ def updatesystem():
     shl('apt autoremove -y')
     shl('apt autoclean -y')
     print('Обновление завершено!')
+
 
 
