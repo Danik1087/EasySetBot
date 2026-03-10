@@ -43,6 +43,9 @@ Telegram Bot - Ubuntu/Debian Server Control Panel
   1. Подождите в течении 4 - 10 минут. Возможно вы поставили на установку что-либо, и сервис сейчас занят этим.
   2. Проверьте статус службы esbot (sudo systemctl status esbot) и перезапустите (sudo systemctl restart esbot)
 
+
+
+
 ## English (machine-translated)
 
 ## ⚡️Quick start
@@ -84,5 +87,5 @@ Telegram Bot - Ubuntu/Debian Server Control Panel
 
 ## ❓ Frequently asked questions 
 - The bot does not respond to commands:
-  1. Wait for 4-10 minutes. You may have set something up, and the service is currently busy with it.
-  2. Check the status of the esbot service (sudo systemctl status esbot) and restart it (sudo systemctl restart esbot).
+ 1. Wait for 4-10 minutes. You may have set something up, and the service is currently busy with it.
+ 2. Check the status of the esbot service (sudo systemctl status esbot) and restart it (sudo systemctl restart esbot).
