@@ -119,13 +119,16 @@ try:
 
                 else:
                     print('Обновление пакетов')
-                    shl('sudo apt update -y')
+                    try:
+                        shl('sudo apt update -y')
+                    except:
+                        print('Обновление пакетов прервано!')
                     print('Скачиваю vnstat')
                     shl(f'apt install -y vnstat')
                     if shutil.which('git') is None: # Скачивание git если его нет
                         print('Устанавливаю git...')
                         shl('sudo apt install git -y')
-                    downloadlink = 'https://github.com/Danik1087/EasySetBot/releases/download/v0.7/' # Ссылка скачивания репозитория.
+                    downloadlink = 'https://github.com/Danik1087/EasySetBot/releases/download/v0.8/' # Ссылка скачивания репозитория.
                     shl("sudo -u ESBot mkdir -p /home/ESBot/EasySetBot") # Создание директории телеграм-бота
                     print(f'Начинаю установку с \n{downloadlink}')
                     files = [
@@ -193,5 +196,3 @@ except Exception as e:
     print(f"Критическая ошибка: {e}")
     print(f'Процесс завершен с ошибкой.')
     endwitherror()
-
-
