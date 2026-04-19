@@ -91,8 +91,8 @@ try:
 
                     if shl("id ESBot").returncode == 0:
                         print("Пользователь ESBot уже существует")
-                        print('Хотите переустановить бота? (да/нет)')
-                        if input().lower() == 'да':
+                        print('Хотите переустановить бота? (y/n)')
+                        if input().lower() == 'y':
                             endwitherror()
                             print('Перезапустите установщик!')
                         exit(1)
@@ -110,8 +110,8 @@ try:
                 print('Начинаю установку пакета под Ubuntu / Debian.')
                 if Path('EasySetBot').exists(): # Проверка установки
                     print('Ошибка установки. Папка EasySetBot существует. Скорее всего установка уже была выполнена.')
-                    print('Хотите переустановить бота? (да/нет)')
-                    if input().lower() == 'да':
+                    print('Хотите переустановить бота? (y/n)')
+                    if input().lower() == 'y':
                         endwitherror()
                         print('Перезапустите установщик!')
                     print('Завершаю работу.')
@@ -119,7 +119,10 @@ try:
 
                 else:
                     print('Обновление пакетов')
-                    shl('sudo apt update -y')
+                    try:
+                        shl('sudo apt update -y')
+                    except:
+                        print('Обновление пакетов прервано!')
                     print('Скачиваю vnstat')
                     shl(f'apt install -y vnstat')
                     if shutil.which('git') is None: # Скачивание git если его нет

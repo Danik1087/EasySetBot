@@ -57,16 +57,16 @@ try:
         print(' !!! Проверьте вы ли это. Если это не вы нажмите ctrl c')
         print(response)
         print('Скрипт не завис! Подождите немного.')
-        sleep(15)
+        sleep(5)
         ID1 = user.id
         password = passwd(4)
         warning_msg = await update.message.reply_text(
-            "Скопируйте пароль сразу после получения - в целях безопасности он будет удален через 15 секунд.\nЕсли вы не успели его сохранить, посмотрите вывод пароля в терминале сервера."
+            "Скопируйте пароль сразу после получения - в целях безопасности он будет удален через 5 секунд.\nЕсли вы не успели его сохранить, посмотрите вывод пароля в терминале сервера."
         )
         
         passwd_msg = await update.message.reply_text(f"Ваш пароль:\n{password}")
         print(f'Ваш пароль:\n{password}')
-        sleep(15)
+        sleep(7)
         try:
             await warning_msg.delete()
             await passwd_msg.delete()

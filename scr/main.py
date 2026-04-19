@@ -315,7 +315,10 @@ async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 print(st.results.server['name'])
             except Exception as e:
                 await query.edit_message_text('❌ Сервера speedtest заняты. Подождите пару минут.')
-                print(e)
+                pinggoogle = ping('pinggoogle')
+                pingyandex = ping('pingyandex')
+                await query.edit_message_text(f'❌ Неудалось выполнить полный замер скорости.\nНиже представлен ping до основных сервисов:\ngoogle.com - {pinggoogle:.2f} мс\nyandex.ru - {pingyandex:.2f} мс')
+                return
 
             await query.edit_message_text('📥 Замеряем скорость скачивания...')
             download_speed = st.download() / 1000000
@@ -338,7 +341,9 @@ async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.edit_message_text(result,reply_markup=back1())
 
         except Exception as e:
-            await query.edit_message_text('❌ Ошибка при выполнении теста скорости. Подробности в логах сервера.')
+            pinggoogle = ping('pinggoogle')
+            pingyandex = ping('pingyandex')
+            await query.edit_message_text(f'❌ Неудалось выполнить полный замер скорости.\nНиже представлен ping до основных сервисов:\ngoogle.com - {pinggoogle:.2f} мс\nyandex.ru - {pingyandex:.2f} мс')
             print(e)
 
     elif query.data == 'traffic_consumption':
@@ -581,6 +586,7 @@ async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         chat_id=update.effective_chat.id,
         text='Настройка безопасности выполнена.\nПерезагрузка.'
         )
+        shl("systemctl restart ssh")
         shl('reboot')
 
 
@@ -621,6 +627,7 @@ async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             rootnologin(1)
 
+        shl("systemctl restart ssh")
 
 
         await query.edit_message_text(
@@ -635,6 +642,8 @@ async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             passwdnologin(y=1)
 
+        shl("systemctl restart ssh")
+
         await query.edit_message_text(
                 f'🔒 Настройка безопасности',
                 reply_markup=generate_menu_security(get_config('Port'), get_config('PermitRootLogin'), get_config('PasswordAuthentication'))
@@ -644,7 +653,7 @@ async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         downlfail2ban()
         await context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text='fail2ban успешно установлен.'
+        text='Fail2ban успешно установлен.'
         )
 
     elif query.data == 'updatesystem':
@@ -764,6 +773,7 @@ async def texthandler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif action == 'givewebname':
         step = context.user_data.get('step')
+        query = context.user_data.get('query')
         if step == 'name':
             print(f'Имя: {text}')
             context.user_data['webname'] = text
@@ -891,6 +901,7 @@ async def texthandler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     reply_markup=backsecurity()
                 )
                 context.user_data.clear()
+                shl("systemctl restart ssh")
             else:
                 await update.message.reply_text(
                     f'Порт должен быть в диапазоне от 1025 до 65535.',
@@ -936,6 +947,7 @@ async def texthandler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             with open(f'/home/{username}/.ssh/id_ed25519', 'rb') as file:
                 await update.message.reply_document(document=file)
             context.user_data.clear()
+            shl("systemctl restart ssh")
 
     if context.user_data.get('awaiting_archive_site'):
         await update.message.reply_text('Пожалуйста, загрузите ZIP-архив как документ.')
