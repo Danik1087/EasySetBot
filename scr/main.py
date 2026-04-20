@@ -314,7 +314,6 @@ async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 st.get_best_server()
                 print(st.results.server['name'])
             except Exception as e:
-                await query.edit_message_text('❌ Сервера speedtest заняты. Подождите пару минут.')
                 pinggoogle = ping('pinggoogle')
                 pingyandex = ping('pingyandex')
                 await query.edit_message_text(f'❌ Неудалось выполнить полный замер скорости.\nНиже представлен ping до основных сервисов:\ngoogle.com - {pinggoogle:.2f} мс\nyandex.ru - {pingyandex:.2f} мс')
